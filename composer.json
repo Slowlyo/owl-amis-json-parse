@@ -1,0 +1,32 @@
+{
+    "name": "slowlyo/slow-amis-json-parse",
+    "alias": "amis json 解析",
+    "description": "将 amis 的 json 结构转换为 SlowAdmin 代码",
+    "type": "library",
+    "keywords": ["slow-admin", "extension", "amis", "json-parse"],
+    "homepage": "https://gitee.com/slowlyo/slow-amis-json-parse",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "slowlyo",
+            "email": "slowlyo_email@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "slowlyo/slow-admin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slowlyo\\SlowAmisJsonParse\\": "src/"
+        }
+    },
+    "extra": {
+        "slow-admin": "Slowlyo\\SlowAmisJsonParse\\SlowAmisJsonParseServiceProvider",
+        "laravel": {
+            "providers": [
+                "Slowlyo\\SlowAmisJsonParse\\SlowAmisJsonParseServiceProvider"
+            ]
+        }
+    }
+}
