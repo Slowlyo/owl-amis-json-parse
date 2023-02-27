@@ -9,7 +9,6 @@ class SlowAmisJsonParseServiceProvider extends ServiceProvider
 {
     protected $menu = [
         [
-            'parent'   => '',
             'title'    => 'amis json 解析',
             'url'      => '/slow-amis-json-parse',
             'url_type' => '1',
