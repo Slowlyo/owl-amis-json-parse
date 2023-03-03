@@ -1,4 +1,4 @@
-## SlowAdmin 扩展: Amis Json 解析
+## OwlAdmin 扩展: Amis Json 解析
 
 ## 效果
 
@@ -8,12 +8,12 @@
 
 #### zip 下载地址
 
-[https://gitee.com/slowlyo/slow-amis-json-parse/repository/archive/master.zip](https://gitee.com/slowlyo/slow-amis-json-parse/repository/archive/master.zip)
+[https://gitee.com/slowlyo/owl-amis-json-parse/repository/archive/master.zip](https://gitee.com/slowlyo/owl-amis-json-parse/repository/archive/master.zip)
 
 #### composer
 
 ```bash
-composer require slowlyo/slow-amis-json-parse
+composer require slowlyo/owl-amis-json-parse
 ```
 
 ## 使用说明

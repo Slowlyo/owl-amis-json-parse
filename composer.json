@@ -1,9 +1,9 @@
 {
-    "name": "slowlyo/slow-amis-json-parse",
+    "name": "slowlyo/owl-amis-json-parse",
     "alias": "amis json 解析",
-    "description": "将 amis 的 json 结构转换为 SlowAdmin 代码",
+    "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
     "type": "library",
-    "keywords": ["slow-admin", "extension", "amis", "json-parse"],
+    "keywords": ["owl-admin", "extension", "amis", "json-parse"],
     "homepage": "https://gitee.com/slowlyo/slow-amis-json-parse",
     "license": "MIT",
     "authors": [
@@ -14,18 +14,18 @@
     ],
     "require": {
         "php": ">=8.0",
-        "slowlyo/slow-admin": "*"
+        "slowlyo/owl-admin": "*"
     },
     "autoload": {
         "psr-4": {
-            "Slowlyo\\SlowAmisJsonParse\\": "src/"
+            "Slowlyo\\OwlAmisJsonParse\\": "src/"
         }
     },
     "extra": {
-        "slow-admin": "Slowlyo\\SlowAmisJsonParse\\SlowAmisJsonParseServiceProvider",
+        "owl-admin": "Slowlyo\\OwlAmisJsonParse\\OwlAmisJsonParseServiceProvider",
         "laravel": {
             "providers": [
-                "Slowlyo\\SlowAmisJsonParse\\SlowAmisJsonParseServiceProvider"
+                "Slowlyo\\OwlAmisJsonParse\\OwlAmisJsonParseServiceProvider"
             ]
         }
     }

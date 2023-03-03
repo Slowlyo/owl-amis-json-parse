@@ -1,20 +1,20 @@
 <?php
 
-namespace Slowlyo\SlowAmisJsonParse\Http\Controllers;
+namespace Slowlyo\OwlAmisJsonParse\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Slowlyo\SlowAdmin\Renderers\Card;
-use Slowlyo\SlowAdmin\Renderers\Form;
-use Slowlyo\SlowAdmin\Renderers\Flex;
-use Slowlyo\SlowAdmin\Renderers\Html;
-use Slowlyo\SlowAdmin\Renderers\UrlAction;
-use Slowlyo\SlowAmisJsonParse\Support\Parse;
-use Slowlyo\SlowAdmin\Renderers\EditorControl;
-use Slowlyo\SlowAdmin\Renderers\VanillaAction;
-use Slowlyo\SlowAdmin\Renderers\SwitchControl;
-use Slowlyo\SlowAdmin\Controllers\AdminController;
+use Slowlyo\OwlAdmin\Renderers\Card;
+use Slowlyo\OwlAdmin\Renderers\Form;
+use Slowlyo\OwlAdmin\Renderers\Flex;
+use Slowlyo\OwlAdmin\Renderers\Html;
+use Slowlyo\OwlAdmin\Renderers\UrlAction;
+use Slowlyo\OwlAmisJsonParse\Support\Parse;
+use Slowlyo\OwlAdmin\Renderers\EditorControl;
+use Slowlyo\OwlAdmin\Renderers\VanillaAction;
+use Slowlyo\OwlAdmin\Renderers\SwitchControl;
+use Slowlyo\OwlAdmin\Controllers\AdminController;
 
-class SlowAmisJsonParseController extends AdminController
+class OwlAmisJsonParseController extends AdminController
 {
     protected string $pageTitle = 'amis json 解析';
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Slowlyo\SlowAmisJsonParse\Support;
+namespace Slowlyo\OwlAmisJsonParse\Support;
 
-use Arr;
-use Slowlyo\SlowAdmin\Renderers\RendererMap;
+use Illuminate\Support\Arr;
+use Slowlyo\OwlAdmin\Renderers\RendererMap;
 
 class Parse
 {
@@ -33,7 +33,7 @@ class Parse
                 if ($this->extractNamespace) {
                     // 提取 namespace
                     $this->namespaces[] = $map[$json['type']];
-                    $className          = str_replace('Slowlyo\\SlowAdmin\\Renderers\\', '', $map[$json['type']]);
+                    $className          = str_replace('Slowlyo\\OwlAdmin\\Renderers\\', '', $map[$json['type']]);
                     $code               .= sprintf('%s::make()', $className);
                 } else {
                     $code .= sprintf('\\%s::make()', $map[$json['type']]);

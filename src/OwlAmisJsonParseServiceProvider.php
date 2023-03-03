@@ -1,11 +1,10 @@
 <?php
 
-namespace Slowlyo\SlowAmisJsonParse;
+namespace Slowlyo\OwlAmisJsonParse;
 
-use Slowlyo\SlowAdmin\Renderers\TextControl;
-use Slowlyo\SlowAdmin\Extend\ServiceProvider;
+use Slowlyo\OwlAdmin\Extend\ServiceProvider;
 
-class SlowAmisJsonParseServiceProvider extends ServiceProvider
+class OwlAmisJsonParseServiceProvider extends ServiceProvider
 {
     protected $menu = [
         [

@@ -1,7 +1,7 @@
 <?php
 
-use Slowlyo\SlowAmisJsonParse\Http\Controllers;
+use Slowlyo\OwlAmisJsonParse\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-Route::get('slow-amis-json-parse', [Controllers\SlowAmisJsonParseController::class, 'index']);
-Route::post('slow-amis-json-parse', [Controllers\SlowAmisJsonParseController::class, 'parse']);
+Route::get('slow-amis-json-parse', [Controllers\OwlAmisJsonParseController::class, 'index']);
+Route::post('slow-amis-json-parse', [Controllers\OwlAmisJsonParseController::class, 'parse']);
