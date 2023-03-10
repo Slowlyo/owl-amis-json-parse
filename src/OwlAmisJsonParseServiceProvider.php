@@ -14,17 +14,4 @@ class OwlAmisJsonParseServiceProvider extends ServiceProvider
             'icon'     => 'mdi:code-json',
         ],
     ];
-
-    public function register()
-    {
-        //
-    }
-
-    public function init()
-    {
-        parent::init();
-
-        //
-
-    }
 }
