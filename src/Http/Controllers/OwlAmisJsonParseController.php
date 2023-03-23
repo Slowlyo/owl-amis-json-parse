@@ -22,7 +22,7 @@ class OwlAmisJsonParseController extends AdminController
     {
         $page = $this->basePage()->body([
             Card::make()->body(
-                Form::make()->api(admin_url('/slow-amis-json-parse'))->wrapWithPanel(false)->body([
+                Form::make()->id('parse_form')->api(admin_url('/slow-amis-json-parse'))->wrapWithPanel(false)->body([
                     Flex::make()->className('pb-4')->justify('end')->items([
                         UrlAction::make()
                             ->className('mr-5')
@@ -32,7 +32,28 @@ class OwlAmisJsonParseController extends AdminController
                         Html::make()->html('&emsp;'),
                         VanillaAction::make()->label('解析')->type('submit')->level('primary')->actionType('ajax'),
                     ]),
-                    SwitchControl::make()->name('extract_namespace')->label('提取 namespace')->value(false),
+                    SwitchControl::make()->name('extract_namespace')->label('提取 namespace')->value(false)->onEvent([
+                        'change' => [
+                            'actions' => [
+                                [
+                                    'actionType'  => 'setValue',
+                                    'componentId' => 'parse_form',
+                                    'args'        => ['value' => ['use_make_func' => false,],],
+                                ],
+                            ],
+                        ],
+                    ]),
+                    SwitchControl::make()->name('use_make_func')->label('使用 amisMake 方法')->value(false)->onEvent([
+                        'change' => [
+                            'actions' => [
+                                [
+                                    'actionType'  => 'setValue',
+                                    'componentId' => 'parse_form',
+                                    'args'        => ['value' => ['extract_namespace' => false,],],
+                                ],
+                            ],
+                        ],
+                    ]),
                     EditorControl::make()
                         ->name('json')
                         ->label('amis json schema')
@@ -61,7 +82,7 @@ class OwlAmisJsonParseController extends AdminController
             return $this->response()->fail('无法解析，请检查 json 格式是否正确');
         }
 
-        $parse     = Parse::make($request->input('extract_namespace'));
+        $parse     = Parse::make($request->input('extract_namespace'), $request->input('use_make_func'));
         $php       = $parse->transform(json_decode($json, true));
         $namespace = $parse->getNamespaces();
 

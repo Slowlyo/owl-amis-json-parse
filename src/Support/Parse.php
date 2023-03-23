@@ -9,16 +9,19 @@ class Parse
 {
     protected bool $extractNamespace = false;
 
+    protected bool $useMakeFunc = false;
+
     protected array $namespaces = [];
 
-    public static function make($extractNamespace = false)
+    public static function make($extractNamespace = false, $useMakeFunc = false)
     {
-        return new static($extractNamespace);
+        return new static($extractNamespace, $useMakeFunc);
     }
 
-    public function __construct($extractNamespace = false)
+    public function __construct($extractNamespace = false, $useMakeFunc = false)
     {
         $this->extractNamespace = $extractNamespace;
+        $this->useMakeFunc      = $useMakeFunc;
     }
 
     public function transform($json)
@@ -35,6 +38,9 @@ class Parse
                     $this->namespaces[] = $map[$json['type']];
                     $className          = str_replace('Slowlyo\\OwlAdmin\\Renderers\\', '', $map[$json['type']]);
                     $code               .= sprintf('%s::make()', $className);
+                } else if ($this->useMakeFunc) {
+                    $className = str_replace('Slowlyo\\OwlAdmin\\Renderers\\', '', $map[$json['type']]);
+                    $code      .= sprintf('amisMake()->%s()', $className);
                 } else {
                     $code .= sprintf('\\%s::make()', $map[$json['type']]);
                 }
