@@ -11,7 +11,7 @@ class OwlAmisJsonParseServiceProvider extends ServiceProvider
             'title'    => 'amis json 解析',
             'url'      => '/slow-amis-json-parse',
             'url_type' => '1',
-            'icon'     => 'mdi:code-json',
+            'icon'     => 'fa fa-repeat',
         ],
     ];
 }

@@ -16,8 +16,6 @@ use Slowlyo\OwlAdmin\Controllers\AdminController;
 
 class OwlAmisJsonParseController extends AdminController
 {
-    protected string $pageTitle = 'amis json 解析';
-
     public function index()
     {
         $page = $this->basePage()->body([
