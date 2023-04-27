@@ -61,29 +61,20 @@ class Parse
                 }
             }
         } else {
-            // 检查二维数组是否包含 type
-            $codes = array_map(function ($value) {
-                return Arr::get($value, 'type') ? $this->transform($value) : null;
-            }, $json);
-
-            // 过滤掉空值
-            $codes = array_filter($codes);
-
-            if ($codes) {
-                // 使用 implode 函数来连接数组元素
-                $code = '[' . implode(',', $codes) . ']';
-            } else {
-                // json 转 php 数组
-                $code = '[';
-                foreach ($json as $key => $value) {
-                    if (is_array($value)) {
-                        $code .= sprintf('\'%s\' => %s,', $key, $this->transform($value));
+            // json 转 php 数组
+            $code = '[';
+            foreach ($json as $key => $value) {
+                if (is_array($value)) {
+                    if (Arr::isList($json)) {
+                        $code .= sprintf('%s,', $this->transform($value));
                     } else {
-                        $code .= sprintf('\'%s\' => \'%s\',', $key, $this->escape($value));
+                        $code .= sprintf('\'%s\' => %s,', $key, $this->transform($value));
                     }
+                } else {
+                    $code .= sprintf('\'%s\' => \'%s\',', $key, $this->escape($value));
                 }
-                $code .= ']';
             }
+            $code .= ']';
         }
 
         return $code;
